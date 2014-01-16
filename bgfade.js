@@ -7,36 +7,37 @@
 function startfade()
 {
 	var fadestatus = 0,
-		maxcolors = 4; // Set your colors value
+		maxcolors = 4,
+		fadespeed = 6000,
+		element = $("body"); // Set your colors value
 
 	setInterval(function(){
 
-		while(fadestatus == 0) // set thes counters
+		while(fadestatus == 0) // set these counters
 		{
-			$("body").switchClass( "fadeblue", "fadered", 6000, "easeInOutQuad" );
+			element.switchClass( "fadeblue", "fadered", fadespeed, "easeInOutQuad" );
 			fadestatus =  Math.floor((1+maxcolors)*Math.random());
 		}
 		while(fadestatus == 1)
 		{
-			$("body").switchClass( "fadered", "fadegreen", 6000, "easeInOutQuad" );
+			element.switchClass( "fadered", "fadegreen", fadespeed, "easeInOutQuad" );
 			fadestatus =  Math.floor((1+maxcolors)*Math.random());
 		}
 		while(fadestatus == 2)
 		{
-			$("body").switchClass( "fadegreen", "fadeyellow", 6000, "easeInOutQuad" );
+			element.switchClass( "fadegreen", "fadeyellow", fadespeed, "easeInOutQuad" );
 			fadestatus =  Math.floor((1+maxcolors)*Math.random());
 		}
 		while(fadestatus == 3)
 		{
-			$("body").switchClass( "fadeyellow", "fadecyan", 6000, "easeInOutQuad" );
+			element.switchClass( "fadeyellow", "fadecyan", fadespeed, "easeInOutQuad" );
 			fadestatus =  Math.floor((1+maxcolors)*Math.random());
 		}
 		while(fadestatus == 4)
 		{
-			$("body").switchClass( "fadecyan", "fadeblue", 6000, "easeInOutQuad" );
+			element.switchClass( "fadecyan", "fadeblue", fadespeed, "easeInOutQuad" );
 			fadestatus =  Math.floor((1+maxcolors)*Math.random());
 		}
 		
 	}, 1000);
-
 }
