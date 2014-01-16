@@ -3,8 +3,8 @@ bgFade
 
 jQuery Background Color Fader for HTML5 Pages
 
-Instal
-------
+Install
+-------
 
 Just include the backfade.js in your HTML Document.
 Something like these: <script type="text/javascript" src="backfade.js"></script>
