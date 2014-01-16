@@ -14,27 +14,27 @@ function startfade()
 		while(fadestatus == 0) // set thes counters
 		{
 			$("body").switchClass( "fadeblue", "fadered", 6000, "easeInOutQuad" );
-			fadestatus =  Math.floor((maxcolors)*Math.random());
+			fadestatus =  Math.floor((1+maxcolors)*Math.random());
 		}
 		while(fadestatus == 1)
 		{
 			$("body").switchClass( "fadered", "fadegreen", 6000, "easeInOutQuad" );
-			fadestatus =  Math.floor((maxcolors)*Math.random());
+			fadestatus =  Math.floor((1+maxcolors)*Math.random());
 		}
 		while(fadestatus == 2)
 		{
 			$("body").switchClass( "fadegreen", "fadeyellow", 6000, "easeInOutQuad" );
-			fadestatus =  Math.floor((maxcolors)*Math.random());
+			fadestatus =  Math.floor((1+maxcolors)*Math.random());
 		}
 		while(fadestatus == 3)
 		{
 			$("body").switchClass( "fadeyellow", "fadecyan", 6000, "easeInOutQuad" );
-			fadestatus =  Math.floor((maxcolors)*Math.random());
+			fadestatus =  Math.floor((1+maxcolors)*Math.random());
 		}
 		while(fadestatus == 4)
 		{
 			$("body").switchClass( "fadecyan", "fadeblue", 6000, "easeInOutQuad" );
-			fadestatus =  Math.floor((maxcolors)*Math.random());
+			fadestatus =  Math.floor((1+maxcolors)*Math.random());
 		}
 		
 	}, 1000);
