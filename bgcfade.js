@@ -4,40 +4,46 @@
 		Requires: jQeruy and jQuery UI 1.9..
 */
 
-function startfade()
+window.onload=function()
 {
-	var fadestatus = 0,
-		maxcolors = 4,
-		fadespeed = 6000,
-		element = $("body"); // Set your colors value
 
-	setInterval(function(){
+	function startfade()
+	{
+		var fadestatus = 0,
+			maxcolors = 4,
+			fadespeed = 6000,
+			element = $("body"); // Set your colors value
 
-		while(fadestatus == 0) // set these counters
-		{
-			element.switchClass( "fadeblue", "fadered", fadespeed, "easeInOutQuad" );
-			fadestatus =  Math.floor((1+maxcolors)*Math.random());
-		}
-		while(fadestatus == 1)
-		{
-			element.switchClass( "fadered", "fadegreen", fadespeed, "easeInOutQuad" );
-			fadestatus =  Math.floor((1+maxcolors)*Math.random());
-		}
-		while(fadestatus == 2)
-		{
-			element.switchClass( "fadegreen", "fadeyellow", fadespeed, "easeInOutQuad" );
-			fadestatus =  Math.floor((1+maxcolors)*Math.random());
-		}
-		while(fadestatus == 3)
-		{
-			element.switchClass( "fadeyellow", "fadecyan", fadespeed, "easeInOutQuad" );
-			fadestatus =  Math.floor((1+maxcolors)*Math.random());
-		}
-		while(fadestatus == 4)
-		{
-			element.switchClass( "fadecyan", "fadeblue", fadespeed, "easeInOutQuad" );
-			fadestatus =  Math.floor((1+maxcolors)*Math.random());
-		}
-		
-	}, 1000);
+		setInterval(function(){
+
+			while(fadestatus == 0) // set these counters
+			{
+				element.switchClass( "fadeblue", "fadered", fadespeed, "easeInOutQuad" );
+				fadestatus =  Math.floor((1+maxcolors)*Math.random());
+			}
+			while(fadestatus == 1)
+			{
+				element.switchClass( "fadered", "fadegreen", fadespeed, "easeInOutQuad" );
+				fadestatus =  Math.floor((1+maxcolors)*Math.random());
+			}
+			while(fadestatus == 2)
+			{
+				element.switchClass( "fadegreen", "fadeyellow", fadespeed, "easeInOutQuad" );
+				fadestatus =  Math.floor((1+maxcolors)*Math.random());
+			}
+			while(fadestatus == 3)
+			{
+				element.switchClass( "fadeyellow", "fadecyan", fadespeed, "easeInOutQuad" );
+				fadestatus =  Math.floor((1+maxcolors)*Math.random());
+			}
+			while(fadestatus == 4)
+			{
+				element.switchClass( "fadecyan", "fadeblue", fadespeed, "easeInOutQuad" );
+				fadestatus =  Math.floor((1+maxcolors)*Math.random());
+			}
+			
+		}, 1000);
+	}
+
+	startfade();
 }
