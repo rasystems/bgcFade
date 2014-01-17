@@ -1,4 +1,4 @@
-bgFade
+bgcFade
 ======
 
 jQuery Background Color Fader for HTML5 Pages
