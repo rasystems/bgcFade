@@ -26,10 +26,6 @@ just define a new css class in your stylesheet or styles definition:
 		background: #C438AA;
 	}
 	
-2. Define the new color in the backfade.js
+2. Add the new color in the backfade.js classes
   
-   while(fadestatus == 0)
-		{
-			$("body").switchClass( "fadeblue", "fadepink", 6000, "easeInOutQuad" );
-			fadestatus =  Math.floor(0 + (1+4-0)*Math.random());
-		}
+   classes = ["fadeblue", "fadered", "fadegreen", "fadeyellow", .....]
