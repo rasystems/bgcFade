@@ -7,43 +7,49 @@
 window.onload=function()
 {
 
-	function startfade()
+	/*
+	 * Fades the background by changing the CSS classes radomly
+	 */
+	function fadeRandom()
 	{
-		var fadestatus = 0,
-			maxcolors = 4,
+		var fadestart, fadeend,
 			fadespeed = 6000,
+			classes = ["fadeblue", "fadered", "fadegreen", "fadeyellow", "fadecyan"],
+			len = classes.length,
 			element = $("body"); // Set your colors value
 
 		setInterval(function(){
+			fadestart =  Math.floor(len*Math.random());
+			fadeend =  Math.floor(len*Math.random());
 
-			while(fadestatus == 0) // set these counters
-			{
-				element.switchClass( "fadeblue", "fadered", fadespeed, "easeInOutQuad" );
-				fadestatus =  Math.floor((1+maxcolors)*Math.random());
+			// avoid same index for "end class"
+			while(fadeend === fadestart){
+				fadeend =  Math.floor(len*Math.random());
 			}
-			while(fadestatus == 1)
-			{
-				element.switchClass( "fadered", "fadegreen", fadespeed, "easeInOutQuad" );
-				fadestatus =  Math.floor((1+maxcolors)*Math.random());
-			}
-			while(fadestatus == 2)
-			{
-				element.switchClass( "fadegreen", "fadeyellow", fadespeed, "easeInOutQuad" );
-				fadestatus =  Math.floor((1+maxcolors)*Math.random());
-			}
-			while(fadestatus == 3)
-			{
-				element.switchClass( "fadeyellow", "fadecyan", fadespeed, "easeInOutQuad" );
-				fadestatus =  Math.floor((1+maxcolors)*Math.random());
-			}
-			while(fadestatus == 4)
-			{
-				element.switchClass( "fadecyan", "fadeblue", fadespeed, "easeInOutQuad" );
-				fadestatus =  Math.floor((1+maxcolors)*Math.random());
-			}
-			
+
+			element.switchClass( classes[fadestart], classes[fadeend], fadespeed, "easeInOutQuad" );
 		}, 1000);
 	}
 
-	startfade();
+	/*
+	 * Fades the background by using the order of the CSS classes in the classes array
+	 */
+	function fadeByOrder()
+	{
+		var fadestatus = 0,
+			fadespeed = 6000,
+			classes = ["fadeblue", "fadered", "fadegreen", "fadeyellow", "fadecyan"],
+			len = classes.length,
+			element = $("body"); // Set your colors value
+
+		// set first class also to the end of array
+		classes.push(classes[0]);
+
+		setInterval(function(){
+			element.switchClass( classes[fadestatus], classes[fadestatus+1], fadespeed, "easeInOutQuad" );
+			fadestatus =  Math.floor(len*Math.random());
+		}, 1000);
+	}
+
+	fadeRandom();
 }
